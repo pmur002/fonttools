@@ -1,0 +1,14 @@
+
+importFrom("reticulate",
+           "py_available",
+           "install_miniconda",
+           "py_config",
+           "py_module_available",
+           "py_install",
+           "import",
+           "py_run_string")
+
+export("initFontTools",
+
+       "ttLib",
+       "loadFont")
