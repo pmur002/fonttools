@@ -11,6 +11,14 @@ ttLib <- function() {
     tt
 }
 
+boundsPen <- function() {
+    bp <- get("boundsPen", env=fontToolsEnv)
+    if (is.null(bp))
+        stop(paste("FontTools is not available;",
+                   "try running installFontTools()?"))
+    bp
+}
+
 installFontTools <- function() {
     ## Check whether Python exists and is bound to reticulate
     ## Will offer to install Python (miniconda) otherwise
@@ -31,12 +39,18 @@ installFontTools <- function() {
         assign("ttLib",
                import("fontTools.ttLib", delay_load=TRUE),
                env=fontToolsEnv)
+        assign("boundsPen",
+               import("fontTools.pens.boundsPen", delay_load=TRUE),
+               env=fontToolsEnv)
     }
 }
 
 .onLoad <- function(libname, pkgname) {
     assign("ttLib",
            import("fontTools", delay_load = TRUE),
+           env=fontToolsEnv)
+    assign("boundsPen",
+           import("fontTools.pens.boundsPen", delay_load=TRUE),
            env=fontToolsEnv)
 }
 

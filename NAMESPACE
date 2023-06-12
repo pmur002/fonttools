@@ -10,5 +10,9 @@ importFrom("reticulate",
 
 export("installFontTools",
 
-       "ttLib",
-       "loadFont")
+       "ttLib", 
+       
+       "loadFont",
+       "fontFamily", "fontWeight", "fontStyle",
+       "fontGlyphIndex", "fontGlyphName",
+       "fontGlyphWidth", "fontGlyphHeight", "fontGlyphBounds")
