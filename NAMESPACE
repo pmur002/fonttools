@@ -8,7 +8,7 @@ importFrom("reticulate",
            "import",
            "py_run_string")
 
-export("initFontTools",
+export("installFontTools",
 
        "ttLib",
        "loadFont")
