@@ -1,8 +1,5 @@
 
 importFrom("reticulate",
-           "py_available",
-           "install_miniconda",
-           "py_config",
            "py_module_available",
            "py_install",
            "import",
@@ -13,6 +10,6 @@ export("installFontTools",
        "ttLib", 
        
        "loadFont",
-       "fontFamily", "fontWeight", "fontStyle",
+       "fontFamily", "fontWeight", "fontStyle", "fontUnits",
        "fontGlyphIndex", "fontGlyphName",
        "fontGlyphWidth", "fontGlyphHeight", "fontGlyphBounds")

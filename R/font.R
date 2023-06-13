@@ -24,6 +24,10 @@ fontStyle <- function(font) {
     }
 }
 
+fontUnits <- function(font) {
+    font['head']$unitsPerEm
+}
+
 fontGlyphIndex <- function(font, name) {
     font$getGlyphID(name)
 }
