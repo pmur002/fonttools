@@ -39,7 +39,7 @@ fontGlyphName <- function(font, unicode) {
 
 fontGlyphWidth <- function(font, index) {
     units <- font['head']$unitsPerEm
-    width <- unlist(font['hmtx']$metrics[[index]])
+    width <- unlist(font['hmtx']$metrics[[index + 1]])
     attr(width, "unitsPerEm") <- units
     width
 }
@@ -49,7 +49,7 @@ fontGlyphHeight <- function(font, index) {
     vmtx <- font$get('vmtx')
     height <- NULL
     if (!is.null(vmtx)) {
-        height <- unlist(vmtx$metrics[[index]])
+        height <- unlist(vmtx$metrics[[index + 1]])
         attr(height, "unitsPerEm") <- units
     }
     height
@@ -58,6 +58,6 @@ fontGlyphHeight <- function(font, index) {
 fontGlyphBounds <- function(font, index) {
     glyphSet <- font$getGlyphSet()
     bp <- boundsPen()$BoundsPen(glyphSet)
-    glyphSet[font$glyphOrder[index]]$draw(bp)
+    glyphSet[font$glyphOrder[index + 1]]$draw(bp)
     unlist(bp$bounds)
 }
