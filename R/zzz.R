@@ -37,17 +37,17 @@ installFontTools <- function() {
                        "the fonttools package"))
         }
         assign("ttLib",
-               import("fontTools.ttLib", delay_load=TRUE),
+               import("fontTools.ttLib"),
                env=fontToolsEnv)
         assign("boundsPen",
-               import("fontTools.pens.boundsPen", delay_load=TRUE),
+               import("fontTools.pens.boundsPen"),
                env=fontToolsEnv)
     }
 }
 
 .onLoad <- function(libname, pkgname) {
     assign("ttLib",
-           import("fontTools", delay_load = TRUE),
+           import("fontTools.ttLib", delay_load = TRUE),
            env=fontToolsEnv)
     assign("boundsPen",
            import("fontTools.pens.boundsPen", delay_load=TRUE),
