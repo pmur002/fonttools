@@ -1,5 +1,6 @@
 
 importFrom("reticulate",
+           "py_available",
            "py_module_available",
            "py_install",
            "import",
