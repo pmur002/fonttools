@@ -24,6 +24,10 @@ fontStyle <- function(font) {
     }
 }
 
+fontGlyphNames <- function(font) {
+    names(font$getReverseGlyphMap())
+}
+
 fontUnits <- function(font) {
     font['head']$unitsPerEm
 }

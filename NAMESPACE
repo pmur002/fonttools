@@ -12,5 +12,5 @@ export("installFontTools",
        
        "loadFont",
        "fontFamily", "fontWeight", "fontStyle", "fontUnits",
-       "fontGlyphIndex", "fontGlyphName",
+       "fontGlyphNames", "fontGlyphIndex", "fontGlyphName",
        "fontGlyphWidth", "fontGlyphHeight", "fontGlyphBounds")
